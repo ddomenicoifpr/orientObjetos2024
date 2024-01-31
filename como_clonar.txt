@@ -1,0 +1,26 @@
+OPÇÃO 1:
+Instruções para clonar o repositório (AMBIENTE LINUX UTILIZANDO O TERMINAL):
+
+1- Acesse o diretório onde deseja realizar a clonagem. Clique com o botão direito sobre a tela e depois selecione "Abrir no terminal"
+
+2- No terminal aberto, digite: git clone https://github.com/ddomenicoifpr/orientObjetos2024.git 
+   Depois tecle <Enter>
+   
+3- Acesse novamente o diretório, sendo que uma pasta chamada orientObjetos2024 foi criada lá.
+
+-------------------------------------------------------//--------------------------------------------------------------------
+
+Caso o repositório já tenha sido clonado anteriormente, o mesmo poder ser atualizado:
+
+1- Acesse o diretório orientObjetos2024. Em seguida, clique com o botão direito sobre a tela e depois selecione "Abrir no terminal"
+
+2- No terminal aberto, digite: git pull
+   Depois tecle <Enter>
+   
+3- Ao acessar novemente o diretório, o mesmo estará com o seu conteúdo atualizado.
+
+
+
+OPÇÃO 2:
+Utilize o GitHub Desktop.
+
