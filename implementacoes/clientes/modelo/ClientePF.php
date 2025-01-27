@@ -18,7 +18,7 @@ class ClientePF extends Cliente {
     }
 
     public function getTipo() {
-        return "Pessoa Fisica";
+        return "F";
     }
 
     //GET e SET

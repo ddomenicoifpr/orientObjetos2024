@@ -12,6 +12,14 @@ abstract class Cliente {
     public abstract function getNroDoc();
     public abstract function getTipo();
 
+    public function __toString() {
+        return sprintf("%d- %s | %s | %s | %s | %s\n",
+                        $this->id, $this->getTipo(), $this->nomeSocial,
+                        $this->getIdentificacao(), $this->getNroDoc(),
+                        $this->email);
+        
+    }
+
     //GETs e SET
     /**
      * Get the value of id
