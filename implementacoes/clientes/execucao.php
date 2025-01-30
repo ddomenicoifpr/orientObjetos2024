@@ -84,14 +84,37 @@ do {
             //3- Verificar se o cliente retornar é diferente de NULL
             //3.1- Se for diferente de NULL, mostrar os dados do cliente
             //3.2- Se for igual a NULL, mostrar mensagem que o cliente não foi encontrado
-            if($cliente) 
-                echo $cliente; //Chama o método toString()
+            if($cliente != null)
+                echo $cliente;
             else
-                echo "Cliente com ID " . $id . " não econtrado!\n";
+                echo "Cliente não econtrado!\n";
 
             break;
 
         case 5:
+            //EXCLUSÃO PELO ID DO CLIENTE
+            
+            //1- Listar os clientes
+            $clienteDAO = new ClienteDAO();
+            $clientes = $clienteDAO->listarClientes();
+            foreach($clientes as $c)
+                echo $c;
+
+            //2- Solicatar ao usuário para informar o ID
+            $id = readline("Informe o ID do cliente a ser excluído: ");
+
+            //2.1 - Validar se o cliente existe
+            $cliente = $clienteDAO->buscarPorId($id);
+            if($cliente) {
+
+                //3- Chamar o ClienteDAO para remover da base de dados
+                $clienteDAO->excluirPorId($id);
+
+                //4- Informar que o cliente foi excluido
+                echo "Cliente excluído com sucesso!\n";
+            } else
+                echo "Cliente não encontrado!\n";
+
             break;
 
         case 0:

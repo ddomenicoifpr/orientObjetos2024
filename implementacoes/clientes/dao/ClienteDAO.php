@@ -52,21 +52,31 @@ class ClienteDAO {
         return $clientes;
     }
 
-    public function buscarPorId(int $id) {
-        $sql = "SELECT * FROM clientes WHERE id = ?";
-
+    public function buscarPorId(int $idCliente) {
         $con = Conexao::getCon();
 
+        $sql = "SELECT * FROM clientes WHERE id = ?";
+
         $stm = $con->prepare($sql);
-        $stm->execute(array($id));
+        $stm->execute([$idCliente]);
+
         $registros = $stm->fetchAll();
 
         $clientes = $this->mapClientes($registros);
-        
-        if(count($clientes) == 1)
+
+        if(count($clientes) > 0)
             return $clientes[0];
         
         return null;
+    }
+
+    public function excluirPorId(int $idCliente) {
+        $con = Conexao::getCon();
+
+        $sql = "DELETE FROM clientes WHERE id = ?";
+
+        $stm = $con->prepare($sql);
+        $stm->execute([$idCliente]);
     }
 
     private function mapClientes(array $registros) {
